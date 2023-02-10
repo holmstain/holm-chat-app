@@ -5,7 +5,7 @@ import {AiOutlineSend} from 'react-icons/ai'
 
 
 const style = {
-    form:`h-10 w-full max-w-screen flex text-xl relative bottom-0`,
+    form:`h-10 w-full max-w-screen flex text-xl bottom-0`,
     input:`w-full text-xl p-3 bg-gray-900 text-white outline-none border-none`,
     button: `w-[20px] bg-green-500 bottom-0`,
 }
