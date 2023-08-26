@@ -5,9 +5,10 @@ import {AiOutlineSend} from 'react-icons/ai'
 
 
 const style = {
-    form:`h-10 w-full max-w-screen flex text-xl bottom-0`,
-    input:`w-full text-xl p-3 bg-gray-900 text-white outline-none border-none`,
-    button: `w-[20px] bg-green-500 bottom-0`,
+    form:`h-full max-w-screen flex text-xl bottom-0 `,
+    input:`absolute w-screen ml-[-2px] text-xl p-2 bg-gray-900 text-white outline-none border-none top-[897px] rounded-b-lg`,
+    button: `absolute h-[44px] w-[35px] bg-green-500 end-0 top-[897px] ml-[-10px]`,
+    sendIcon: `absolute top-[30%] left-[20%]`
 }
 
 const SendMessage = ({scroll}) => {
@@ -16,7 +17,7 @@ const SendMessage = ({scroll}) => {
     const sendMessage = async (e) => {
         e.preventDefault()
         if (input === '') {
-            alert('write something')
+            alert('Massage cannot blank')
             return
         }
         const {uid, displayName} = auth.currentUser
@@ -33,7 +34,7 @@ const SendMessage = ({scroll}) => {
     return (
         <form onSubmit={sendMessage} className={style.form}>
         <input value={input} onChange={(e) => setInput(e.target.value)} className={style.input} type="text" placeholder='message' />
-        <button className={style.button} type='submit'><AiOutlineSend/></button>
+        <button className={style.button} type='submit'><AiOutlineSend className={style.sendIcon}/></button>
     </form>
   )
 }
